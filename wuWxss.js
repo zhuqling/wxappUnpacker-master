@@ -134,11 +134,11 @@ result[cssFile]+=makeup(data);
 
 function runVM(name,code){
 
-let wxAppCode={},handle={cssFile:name};
+let wxAppCode={},handle={cssFile:name},vd_version_info={};
 
 let gg = new GwxCfg()
 
-let tsandbox = {$gwx:GwxCfg.prototype["$gwx"],__mainPageFrameReady__:GwxCfg.prototype["$gwx"],__wxAppCode__:wxAppCode,setCssToHead:cssRebuild.bind(handle)}
+let tsandbox = {$gwx:GwxCfg.prototype["$gwx"],__mainPageFrameReady__:GwxCfg.prototype["$gwx"],__wxAppCode__:wxAppCode,__vd_version_info__:vd_version_info,setCssToHead:cssRebuild.bind(handle)}
 
 let vm=new VM({sandbox:tsandbox});
 
